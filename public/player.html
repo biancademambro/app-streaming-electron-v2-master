@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Player — StreamApp</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="page-player">
+
+  <header>
+    <button id="btn-voltar">← Voltar</button>
+    <button id="btn-logout">Sair</button>
+  </header>
+
+  <main>
+    <video id="player" controls></video>
+
+    <div class="info-filme">
+      <h2 id="titulo"></h2>
+      <p  id="sinopse"></p>
+      <div class="info-meta">
+        <span id="ano"></span>
+        <span id="duracao"></span>
+      </div>
+    </div>
+  </main>
+
+  <script src="js/player.js"></script>
+</body>
+</html>

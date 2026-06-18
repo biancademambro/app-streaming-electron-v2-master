@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin — StreamApp</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="page-admin">
+
+  <header>
+    <h1>Painel Admin</h1>
+    <div class="header-right">
+      <button id="btn-home">Ver Catálogo</button>
+      <button id="btn-logout">Sair</button>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- Abas -->
+    <div class="tabs">
+      <button class="tab ativo" data-tab="filmes">Filmes</button>
+      <button class="tab"       data-tab="categorias">Categorias</button>
+    </div>
+
+    <!-- Seção: Filmes -->
+    <section id="sec-filmes">
+      <div class="barra-acao">
+        <h2>Filmes</h2>
+        <button id="btn-novo-filme">+ Novo Filme</button>
+      </div>
+      <table id="tabela-filmes">
+        <thead>
+          <tr>
+            <th>Título</th>
+            <th>Categoria</th>
+            <th>Ano</th>
+            <th>Duração</th>
+            <th>Ações</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </section>
+
+    <!-- Seção: Categorias -->
+    <section id="sec-categorias" class="oculto">
+      <div class="barra-acao">
+        <h2>Categorias</h2>
+        <button id="btn-nova-categoria">+ Nova Categoria</button>
+      </div>
+      <table id="tabela-categorias">
+        <thead>
+          <tr>
+            <th>Nome</th>
+            <th>Ações</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </section>
+
+    <!-- Modal: Filme -->
+    <div id="modal-filme" class="modal oculto">
+      <div class="modal-box">
+        <h3 id="modal-filme-titulo">Novo Filme</h3>
+        <form id="form-filme">
+          <input type="hidden" id="filme-id">
+          <input type="text"   id="filme-titulo"   placeholder="Título"           required>
+          <select              id="filme-categoria"></select>
+          <textarea            id="filme-sinopse"  placeholder="Sinopse"></textarea>
+          <input type="number" id="filme-ano"      placeholder="Ano de lançamento">
+          <input type="number" id="filme-duracao"  placeholder="Duração (min)">
+          <input type="url"    id="filme-cover"    placeholder="URL da capa">
+          <input type="url"    id="filme-video"    placeholder="URL do vídeo"     required>
+          <div class="modal-botoes">
+            <button type="submit">Salvar</button>
+            <button type="button" id="btn-fechar-modal-filme">Cancelar</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- Modal: Categoria -->
+    <div id="modal-categoria" class="modal oculto">
+      <div class="modal-box">
+        <h3 id="modal-cat-titulo">Nova Categoria</h3>
+        <form id="form-categoria">
+          <input type="hidden" id="cat-id">
+          <input type="text"   id="cat-nome" placeholder="Nome da categoria" required>
+          <div class="modal-botoes">
+            <button type="submit">Salvar</button>
+            <button type="button" id="btn-fechar-modal-cat">Cancelar</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+  </main>
+
+  <script src="js/admin.js"></script>
+</body>
+</html>
